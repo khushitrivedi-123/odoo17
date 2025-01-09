@@ -1,0 +1,20 @@
+<odoo>
+    <menuitem id="hospital_menu_root" name="Hospital Management" sequence="25" web_icon="hospital_management,static/description/icon.png"/>
+
+    <menuitem id="menu_hospital_management" name="Hospital Management" sequence="1"/>
+
+    <menuitem id="menu_hospital_patient" name="Patients" parent="menu_hospital_management" sequence="2"/>
+
+    <menuitem id="menu_hospital_physician" name="Physicians" parent="menu_hospital_management" sequence="3"/>
+
+     <menuitem id="menu_hospital_specialty" name="Specialties" parent="menu_hospital_management" sequence="4"/>
+
+     <menuitem id="menu_hospital_treatment" name="Treatments" parent="menu_hospital_management" sequence="5"/>
+
+    <menuitem id="menu_hospital_disease" name="Diseases" parent="menu_hospital_management" sequence="6"/>
+
+    <menuitem id="menu_hospital_diagnosis" name="Diagnosis" parent="menu_hospital_management" sequence="7"/>
+
+
+
+</odoo>

@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+
+        <record id="custom_paper_format" model="report.paperformat">
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">50</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">25</field>
+            <field name="dpi">100</field>
+        </record>
+
+        <record id="hospital_treatment_report_action" model="ir.actions.report">
+            <field name="name">Hospital Treatment Report</field>
+            <field name="model">hospital.treatment</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">codetrade_hospital.report_hospital_treatment</field>
+            <field name="report_file">codetrade_hospital.report_hospital_treatment</field>
+            <field name="print_report_name">'Hospital Treatment - %s' % (object.treatment_code)</field>
+            <field name="binding_model_id" ref="model_hospital_treatment"/>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="custom_paper_format"/>
+        </record>
+    </data>
+</odoo>

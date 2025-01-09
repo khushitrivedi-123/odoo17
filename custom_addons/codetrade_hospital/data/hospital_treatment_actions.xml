@@ -1,0 +1,9 @@
+<odoo>
+    <record id="action_open_treatment_wizard" model="ir.actions.act_window">
+        <field name="name">Sales Order Wizard</field>
+        <field name="res_model">hospital.treatment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="domain">[('treatment_id', '=', context.get('default_treatment_id'))]</field>
+    </record>
+</odoo>

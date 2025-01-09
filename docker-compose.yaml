@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:16
+    container_name: odoo17_database
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - postgres:/var/lib/postgresql/data
+           
+
+  odoo:
+    image: odoo:17.0
+    depends_on:
+      - db
+    container_name: odoo_17
+    ports:
+      - 9050:8069
+    stdin_open: true
+    tty: true
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    command:
+      ["odoo", "-c", "/etc/odoo/odoo.conf","-d","demo"]
+    volumes:
+      - odoo:/var/lib/odoo
+      - ./custom_addons:/mnt/extra-addons
+      - ./odoo.conf:/etc/odoo/odoo.conf
+    restart: always
+    
+volumes:
+  postgres:
+  odoo:
+

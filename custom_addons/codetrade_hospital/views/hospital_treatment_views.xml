@@ -1,0 +1,54 @@
+<odoo>
+    <record id="view_hospital_treatment_form_1" model="ir.ui.view">
+        <field name="name">hospital.treatment.form</field>
+        <field name="model">hospital.treatment</field>
+        <field name="arch" type="xml">
+           <form string="Treatment" class="oe_stat_button">
+               <sheet>
+                    <button name="action_download_blank_report"
+                            type="object"
+                            string="Download Blank Report"
+                            class="btn-primary"/>
+                 <div name="button_box" class="oe_button_box">
+                    <button name="action_open_sale_orders" type="object" icon="fa-shopping-cart">
+                     <field name="sale_order_count" widget="statinfo" string="Sales Orders"/>
+                    </button>
+                 </div>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,done"/>
+                    <button name="set_active" string="Active" type="object" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="set_done" string="Done" type="object"  class="oe_highlight" invisible="state != 'active'"/>
+                    <button string="Create Sales Order" type="action" name="%(action_open_treatment_wizard)d" class="btn-primary" invisible="state != 'active'"/>
+                </header>
+                    <group>
+                        <field name="image" widget="image" class="oe_avatar" options="{'preview_image': 'image'}"/>
+                        <field name="treatment_code" readonly="1"/>
+                        <field name="patient_id"/>
+                        <field name="physician_id"/>
+                        <field name="treatment_date"/>
+                        <field name="diagnosis_line_id"/>
+                    </group>
+                </sheet>
+           </form>
+        </field>
+    </record>
+
+    <record id="view_hospital_treatment_tree" model="ir.ui.view">
+        <field name="name">hospital.treatment.tree</field>
+        <field name="model">hospital.treatment</field>
+        <field name="arch" type="xml">
+            <tree string="Treatments">
+                <field name="patient_id"/>
+                <field name="physician_id"/>
+                <field name="treatment_date"/>
+                <field name="diagnosis_line_id"/>
+            </tree>
+        </field>
+    </record>
+     <record id="action_hospital_treatment" model="ir.actions.act_window">
+        <field name="name">Treatments</field>
+        <field name="res_model">hospital.treatment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_hospital_treatment_action" name="Treatment Records" parent="menu_hospital_treatment" action="action_hospital_treatment"/>
+</odoo>
