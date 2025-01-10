@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <template id="website_patient_thank_you" name="Patient Thank You Page">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block">
+                        <div class="container s_allow_columns text-center">
+                            <h1 class="text-center">Thank You!</h1>
+                            <p class="text-center">
+                                Your patient registration has been submitted successfully.
+                                We will contact you shortly.
+                            </p>
+                            <a href="/" class="btn btn-primary">Back to Home</a>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
