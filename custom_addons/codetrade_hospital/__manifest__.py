@@ -4,7 +4,7 @@
     'category': 'Healthcare',
     'author': 'Khushi Trivedi',
     'license': 'LGPL-3',
-    'depends': ['base','sale','web'],
+    'depends': ['base','sale','web', 'mail'],
     'data': [
         'views/hospital_menu.xml',
         'views/hospital_patient_views.xml',
@@ -20,6 +20,7 @@
         'data/hospital_treatment_sequence.xml',
         'report/hospital_treatment_report.xml',
         'report/report_hospital_treatment_template.xml',
+        'views/email_templates.xml',
 
     ],
     'installable': True,

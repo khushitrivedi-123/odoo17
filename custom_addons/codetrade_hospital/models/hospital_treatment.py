@@ -28,6 +28,13 @@ class HospitalTreatment(models.Model):
         for record in self:
             if record.state == 'active':
                 record.state = 'done'
+                if record.patient_id.email:
+                    template = self.env.ref('codetrade_hospital.email_template_treatment_done')
+                    if template:
+                        template.send_mail(record.id, force_send=True)
+                else:
+                    raise ValidationError(
+                        "The patient does not have an email address. Cannot send the treatment completion email.")
 
     @api.depends('sale_order_ids')
     def _compute_sale_order_count(self):

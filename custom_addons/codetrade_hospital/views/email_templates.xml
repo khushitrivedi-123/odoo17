@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <record id="email_template_treatment_done" model="mail.template">
+            <field name="name">Treatment Done Email</field>
+            <field name="model_id" ref="model_hospital_treatment"/>
+            <field name="subject">Treatment Completed: {{object.treatment_code}}</field>
+            <field name="email_from">{{(user.email or 'support@yourcompany.com')}}</field>
+            <field name="email_to">{{object.patient_id.email}}</field>
+            <field name="body_html">
+                <![CDATA[
+                    <p>Dear <small t-esc="object.patient_id.name"></small>,</p>
+                    <p>We are pleased to inform you that your treatment with code <small t-esc="object.treatment_code"></small> has been completed.</p>
+                    <p>If you have any further questions or need assistance, feel free to contact us.</p>
+                    <p>Best regards,</p>
+                    <p><strong>Your Hospital Team</strong></p>
+                ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

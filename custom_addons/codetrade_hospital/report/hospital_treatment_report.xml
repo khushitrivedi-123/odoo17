@@ -1,6 +1,5 @@
 <odoo>
     <data>
-
         <record id="custom_paper_format" model="report.paperformat">
             <field name="default" eval="True"/>
             <field name="format">A4</field>
