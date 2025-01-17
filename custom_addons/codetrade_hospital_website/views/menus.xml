@@ -1,6 +1,5 @@
 <odoo>
     <data>
-
         <record id="menu_website_patient" model="website.menu">
             <field name="name">Patient</field>
             <field name="url">/patients</field>

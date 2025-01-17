@@ -24,38 +24,30 @@
                         <div class="container s_allow_columns">
                             <div class="row">
                                 <div class="col-lg-8 mt-4 mt-lg-0">
-
                                     <section class="s_website_form" data-vcss="001" data-snippet="s_website_form">
                                         <div class="container">
-                                            <form id="patient_form" action="/submit_patient" method="post" enctype="multipart/form-data"
-                                                  class="o_mark_required" data-mark="*"
-                                                  data-model_name="website.patient"
-                                                  data-success-mode="redirect"
-                                                  data-success-page="/patient-thank-you"
-                                                  data-pre-fill="true">
+                                            <form id="patient_form" action="/submit_patient" method="post"  class="o_mark_required" data-mark="*" data-success-mode="redirect" data-success-page="/patient-thank-you" data-pre-fill="true">
+<!--                                            <form id="contactus_form" action="/submit_patient" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-model_name="mail.mail" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-pre-fill="true">-->
+
                                                 <div class="s_website_form_rows row s_col_no_bgcolor">
 
-                                                    <!-- Patient Name -->
                                                     <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom s_website_form_required">
                                                         <label for="patient_name">Patient Name *</label>
                                                         <input id="patient_name" type="text" class="form-control s_website_form_input" name="patient_name" required=""/>
                                                     </div>
 
-                                                    <!-- Date of Birth -->
                                                     <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom">
-                                                        <label for="date_of_birth">Date of Birth</label>
+                                                        <label for="date_of_birth">Date of Birth *</label>
                                                         <input id="date_of_birth" type="date" class="form-control s_website_form_input" name="date_of_birth" required=""/>
                                                     </div>
 
-                                                    <!-- Age -->
                                                     <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom">
                                                         <label for="age">Age</label>
                                                         <input id="age" type="number" class="form-control s_website_form_input" name="age"/>
                                                     </div>
 
-                                                    <!-- Gender -->
                                                     <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom">
-                                                        <label for="gender">Gender</label>
+                                                        <label for="gender">Gender *</label>
                                                         <select id="gender" class="form-control s_website_form_input" name="gender" required="">
                                                             <option value="male">Male</option>
                                                             <option value="female">Female</option>
@@ -63,21 +55,19 @@
                                                         </select>
                                                     </div>
 
-                                                    <!-- Contact Number -->
                                                     <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom">
-                                                        <label for="contact_number">Contact Number</label>
+                                                        <label for="contact_number">Contact Number *</label>
                                                         <input id="contact_number" type="text" class="form-control s_website_form_input" name="contact_number" required=""/>
                                                     </div>
 
-                                                    <!-- Email -->
                                                     <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_required">
                                                         <label for="email_from">Email *</label>
                                                         <input id="email_from" type="email" class="form-control s_website_form_input" name="email_from" required=""/>
                                                     </div>
-
-                                                    <!-- Submit Button -->
-                                                    <div class="mb-0 py-2 col-12 s_website_form_submit">
+                                                    <div class="mb-0 py-2 col-12 s_website_form_submit" data-name="Submit Button">
+                                                        <div style="width: 200px;" class="s_website_form_label"/>
                                                         <button type="submit" class="btn btn-primary">Submit</button>
+                                                        <span id="s_website_form_result"> </span>
                                                     </div>
                                                 </div>
                                             </form>
@@ -90,5 +80,6 @@
                 </div>
             </t>
         </template>
+
     </data>
 </odoo>

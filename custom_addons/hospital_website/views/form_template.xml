@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <template id="form_template">
+            <t t-call="website.layout">
+                 <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                    <h1 style="text-align: center; font-size: 24px; margin-bottom: 20px; color: #333;">Register as a Patient</h1>
+                    <form action="/my/form/submit" method="post" class="patient-form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="patient_name" style="font-size: 16px; color: #555; margin-bottom: 5px; display: block;">Patient Name:</label>
+                            <input type="text" name="patient_name" id="patient_name" class="form-control" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;" required="1"/>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="email" style="font-size: 16px; color: #555; margin-bottom: 5px; display: block;">Email:</label>
+                            <input type="email" name="email" id="email" class="form-control" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;" required="1"/>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="gender" style="font-size: 16px; color: #555; margin-bottom: 5px; display: block;">Gender:</label>
+                            <select name="gender" id="gender" class="form-control" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;" required="1">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="contact_number" style="font-size: 16px; color: #555; margin-bottom: 5px; display: block;">Contact Number:</label>
+                            <input type="text" name="contact_number" id="contact_number" class="form-control" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;" required="1"/>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <label for="date_of_birth" style="font-size: 16px; color: #555; margin-bottom: 5px; display: block;">Date of Birth:</label>
+                            <input type="date" name="date_of_birth" id="date_of_birth" class="form-control" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;" required="1"/>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="background-color: #007bff; color: #fff; border: none; padding: 12px 20px; border-radius: 5px; font-size: 16px; cursor: pointer; display: block; width: 100%; margin-top: 10px;">Submit</button>
+                    </form>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
