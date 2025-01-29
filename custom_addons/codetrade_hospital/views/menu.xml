@@ -1,0 +1,15 @@
+<odoo>
+    <record id="action_invoice_report_wizard" model="ir.actions.act_window">
+        <field name="name">Invoice Report</field>
+        <field name="res_model">invoice.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_invoice_report"
+              name="Invoice Report"
+              parent="account.menu_finance_reports"
+              action="action_invoice_report_wizard"
+              groups="account.group_account_manager"
+              sequence="10" />
+</odoo>

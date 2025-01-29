@@ -7,10 +7,10 @@
                 <sheet>
                     <group>
                         <field name="disease_id"/>
-                          <field name="user_id"/>
+                        <field name="user_id"/>
                         <field name="date"/>
                         <field name="diagnosis_type"/>
-                        <field name="treatment_id" readonly="1"/>
+                        <field name="treatment_id"/>
                     </group>
                 </sheet>
             </form>

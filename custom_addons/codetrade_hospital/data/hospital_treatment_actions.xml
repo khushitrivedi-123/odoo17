@@ -4,6 +4,7 @@
         <field name="res_model">hospital.treatment.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
+        <field name="context">{"default_treatment_id": active_id}</field>
         <field name="domain">[('treatment_id', '=', context.get('default_treatment_id'))]</field>
     </record>
 </odoo>

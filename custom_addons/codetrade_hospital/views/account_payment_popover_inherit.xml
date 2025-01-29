@@ -1,0 +1,14 @@
+<!--<templates id="template" xml:space="preserve">-->
+
+<!--    <t t-name="inherit_account_payment_popover" t-inherit="account.AccountPaymentPopOver" t-inherit-mode="primary">-->
+<!--                <xpath expr="//div[@class='account_payment_popover']/h3[@class='popover-header1']" position="inside">-->
+<!--                    <tr>-->
+<!--                            <td><strong>Treatment ID: </strong></td>-->
+<!--                        <td>-->
+<!--                            <t t-out="props.treatment_id"/>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                </xpath>-->
+<!--            </t>-->
+
+<!--</templates>-->

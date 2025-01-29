@@ -6,7 +6,7 @@
             <form string="Physician">
                 <sheet>
                     <group>
-                        <field name="name"/>
+                        <field name="physician_name"/>
                         <field name="contact_number"/>
                         <field name="email"/>
                           <field name="specialization_ids" widget="many2many_tags"/>
@@ -20,7 +20,7 @@
         <field name="model">hospital.physician</field>
         <field name="arch" type="xml">
             <kanban class="o_kanban_mobile" sample="1">
-                <field name="name"/>
+                <field name="physician_name"/>
                 <field name="contact_number"/>
                 <templates>
                     <t t-name="kanban-box">
@@ -43,7 +43,7 @@
         <field name="model">hospital.physician</field>
         <field name="arch" type="xml">
             <tree string="Physician">
-                <field name="name"/>
+                <field name="physician_name"/>
                 <field name="contact_number"/>
                 <field name="email"/>
             </tree>

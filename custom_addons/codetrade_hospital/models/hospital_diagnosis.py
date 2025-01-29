@@ -1,17 +1,21 @@
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class HospitalDiagnosis(models.Model):
-    _name = 'hospital.diagnosis'
-    _description = 'Diagnosis'
+    _name = "hospital.diagnosis"
+    _description = "Diagnosis"
 
-    disease_id = fields.Many2one('hospital.disease', string="Disease", required=True)
-    user_id = fields.Many2one('res.users', string="Responsible User", default=lambda self: self.env.user, required=True)
+    disease_id = fields.Many2one("hospital.disease", string="Disease", required=True)
+    user_id = fields.Many2one(
+        "res.users",
+        string="Responsible User",
+        default=lambda self: self.env.user,
+        required=True,
+    )
     date = fields.Date(string="Date", default=fields.Date.today)
     diagnosis_type = fields.Selection(
-        [('high', 'High'), ('medium', 'Medium'), ('low', 'Low')],
+        [("high", "High"), ("medium", "Medium"), ("low", "Low")],
         string="Diagnosis Type",
-        required=True
+        required=True,
     )
-    treatment_id = fields.Many2one('hospital.treatment',string="Treatment")
-
+    treatment_id = fields.Many2one("hospital.treatment", string="Treatment")
