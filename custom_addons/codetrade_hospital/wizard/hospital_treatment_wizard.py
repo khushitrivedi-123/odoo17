@@ -6,13 +6,7 @@ class HospitalTreatmentWizard(models.TransientModel):
     _name = "hospital.treatment.wizard"
     _description = "Sales Description for Patient"
 
-    treatment_id = fields.Many2one(
-        "hospital.treatment",
-        string="Treatment",
-        required=True,
-        default=lambda self: self.env.context.get("default_treatment_id") or False,
-    )
-
+    treatment_id = fields.Many2one("hospital.treatment", string="Treatment", required=True, default=lambda self: self.env.context.get("default_treatment_id") or False)
     product_ids = fields.Many2many("product.product", string="Products", required=True)
 
     def confirm_action(self):

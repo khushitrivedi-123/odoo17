@@ -1,6 +1,6 @@
+import base64
 from odoo import http
 from odoo.http import request
-
 
 class HospitalFormController(http.Controller):
 
@@ -8,8 +8,14 @@ class HospitalFormController(http.Controller):
     def render_form(self):
         return request.render("hospital_website.form_template")
 
-    @http.route("/my/form/submit", type="http", auth="public", website=True, csrf=True)
+    @http.route("/my/form/submit", type="http", auth="public",methods=["POST"], website=True, csrf=True)
     def submit_form(self, **post):
+
+        image_file = request.httprequest.files.get("image")
+        if image_file:
+            # import pdb;pdb.set_trace()
+            post['image'] = base64.b64encode(image_file.read()).decode("utf-8")
+
         request.env["hospital.patient"].sudo().create(
             {
                 "patient_name": post.get("patient_name"),
@@ -17,6 +23,8 @@ class HospitalFormController(http.Controller):
                 "gender": post.get("gender"),
                 "contact_number": post.get("contact_number"),
                 "date_of_birth": post.get("date_of_birth"),
+                "image": post.get("image"),
+
             }
         )
 

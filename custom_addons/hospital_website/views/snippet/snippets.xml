@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_snippet">
+        <section class="s_custom_snippet pt96 pb96" >
+            <div class="container">
+               <div class="row s_nb_column_fixed o_grid_mode" data-row-count="11">
+                <div class="justify-content-center o_grid_item g-height-8 g-col-lg-5 col-lg-5" data-name="Text Box" style="z-index: 1; grid-area: 2 / 1 / 10 / 6;">
+                    <h1 class="display-3">Hospital Website <strong> Contact Us</strong></h1>
+                    <p class="lead">This is a customized template to highlight key features in a simple and engaging layout. Good Bye!</p>
+                    <div class="s_hr text-start pb32 pt4" data-snippet="s_hr" data-name="Separator">
+                        <hr class="w-100 mx-auto"/>
+                    </div>
+                </div>
+
+                <div class="o_grid_item o_grid_item_image g-col-lg-4 g-height-10 col-lg-4" style="z-index: 2; grid-area: 1 / 8 / 11 / 12;">
+                    <img class="img img-fluid mx-auto shadow rounded" src="/hospital_website/static/src/img/image_1.jpg" alt=""/>
+                </div>
+
+                <div class="o_grid_item o_grid_item_image g-col-lg-2  -height-5 col-lg-2 d-lg-block d-none o_snippet_mobile_invisible" style="z-index: 3; grid-area: 2 / 11 / 7 / 13;">
+                    <img class="img img-fluid mx-auto shadow rounded" src="/hospital_website/static/src/img/image_2.jpg" alt=""/>
+                </div>
+            </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="custom_snippets" inherit_id="website.snippets">
+        <xpath expr="//t[@id='default_snippets']/div[@id='snippet_structure']/div[@class='o_panel_body']" position="inside">
+            <t t-snippet="hospital_website.custom_snippet" string="custom_template" t-thumbnail="/hospital_website/static/src/img/s_banner.svg">
+                <keywords> CUSTOM </keywords>
+            </t>
+        </xpath>
+    </template>
+
+
+</odoo>

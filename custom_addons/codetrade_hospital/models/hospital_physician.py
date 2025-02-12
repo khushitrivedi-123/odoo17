@@ -2,24 +2,18 @@ import re
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 
-
 class HospitalPhysician(models.Model):
     _name = "hospital.physician"
     _inherits = {"res.users": "user_id"}
     _description = "Hospital Physician"
 
     physician_name = fields.Char(string="Physician Name", required=True)
-
     specialization = fields.Char(string="Specialization")
-
     contact_number = fields.Char(string="Contact Number")
-
     email = fields.Char(string="Email", required=True)
-
     hospital_id = fields.Many2one("res.partner", string="Hospital")
-
     specialization_ids = fields.Many2many("hospital.specialty", string="Specialties")
-
+    company_id = fields.Many2one("res.company", string="Company", default=lambda self: self.env.company, required=True)
     user_id = fields.Many2one("res.users", string="Related User", ondelete="cascade")
 
     @api.constrains("email")

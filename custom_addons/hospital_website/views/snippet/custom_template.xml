@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="s_custom_template" name="Custom Template">
+    <section class="s_custom_template pt96 pb96">
+        <div class="container">
+            <div class="row s_nb_column_fixed o_grid_mode" data-row-count="11">
+                <div class="justify-content-center o_grid_item g-height-8 g-col-lg-5 col-lg-5" data-name="Text Box" style="z-index: 1; grid-area: 2 / 1 / 10 / 6;">
+                    <h1 class="display-3">Discover New Features. <strong>With Ease.</strong></h1>
+                    <p class="lead">This is a customized template to highlight key features in a simple and engaging layout.</p>
+                    <div class="s_hr text-start pb32 pt4" data-snippet="s_hr" data-name="Separator">
+                        <hr class="w-100 mx-auto"/>
+                    </div>
+                    <p>
+                        <a t-att-href="cta_btn_href" class="btn btn-lg btn-primary">Learn More <span class="fa fa-angle-right ms-2"/></a>
+                    </p>
+                </div>
+
+                <div class="o_grid_item o_grid_item_image g-col-lg-4 g-height-10 col-lg-4" style="z-index: 2; grid-area: 1 / 8 / 11 / 12;">
+                    <img class="img img-fluid mx-auto shadow rounded" src="/web/image/hospital_website.image_1" alt=""/>
+                </div>
+
+                <div class="o_grid_item o_grid_item_image g-col-lg-2 g-height-5 col-lg-2 d-lg-block d-none o_snippet_mobile_invisible" style="z-index: 3; grid-area: 2 / 11 / 7 / 13;">
+                    <img class="img img-fluid mx-auto shadow rounded" src="/web/image/hospital_website.image_2" alt=""/>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+</odoo>
+
+<!--&lt;!&ndash;<?xml version="1.0" encoding="UTF-8" ?>&ndash;&gt;-->
+<!--&lt;!&ndash;<odoo>&ndash;&gt;-->
+<!--<template id="basic_snippet" name="Basic Snippet">-->
+<!--      <section class="container">-->
+<!--          <div class="row">-->
+<!--              <div class="col-md-12">-->
+<!--                  <h1>Basic Snippet.........</h1>-->
+<!--                  <p>This is a basic snippet that is used to test the basic functionality of the snippets.</p>-->
+<!--              </div>-->
+<!--          </div>-->
+<!--      </section>-->
+<!--   </template>-->
+<!--&lt;!&ndash;  </odoo>&ndash;&gt;-->

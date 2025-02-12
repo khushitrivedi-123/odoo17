@@ -15,3 +15,10 @@ class SaleOrder(models.Model):
         store=True,
         readonly=True,
     )
+
+    def _prepare_invoice(self):
+        invoice_vals = super(SaleOrder, self)._prepare_invoice()
+        invoice_vals.update({
+            'treatment_id': self.treatment_id.id,
+        })
+        return invoice_vals

@@ -5,5 +5,5 @@ from . import hospital_treatment
 from . import hospital_disease
 from . import hospital_diagnosis
 from . import sale_order
-from . import invoice_report_wizard
 from . import account_move
+from . import dashboard

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates xml:space="preserve">
+    <t t-inherit="account.AccountPaymentPopOver" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('account_payment_popover')]/div[hasclass('px-2')]/div/table/tr[td[contains(., 'Date:')]]" position="after">
+            <div>
+            <t t-if="props.treatment_id">
+                <tr>
+                    <td><strong>Treatment: </strong></td>
+                    <td><t t-out="props.treatment_id"/></td>
+                </tr>
+            </t>
+            </div>
+        </xpath>
+    </t>
+</templates>

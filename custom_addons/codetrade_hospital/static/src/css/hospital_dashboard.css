@@ -1,0 +1,27 @@
+.kanban-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.tile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.patient_tile, .physician_tile, .treatment_tile {
+    width: 300px;
+    height: 150px;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.patient_tile:hover, .physician_tile:hover, .treatment_tile:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}

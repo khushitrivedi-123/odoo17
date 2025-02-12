@@ -6,6 +6,7 @@
     "license": "LGPL-3",
     "depends": ["base", "sale", "web", "mail", "account"],
     "data": [
+        "security/company_security.xml",
         "security/security.xml",
         "security/ir.model.access.csv",
         "views/hospital_menu.xml",
@@ -24,14 +25,17 @@
         "report/report_hospital_treatment_template.xml",
         "views/email_templates.xml",
         "views/menu.xml",
-        "views/invoice_report_wizard_views.xml",
+        "wizard/invoice_report_wizard_views.xml",
+        "data/treatment_scheduled_actions.xml",
+        "views/dashboard.xml",
+        "data/data.xml",
     ],
-    #     "assets": {
-    #     "web.assets_backend": [
-    #         # "custom_addons/static/src/js/account_payment_popover.js",
-    #         "views/account_payment_popover_inherit.xml",
-    #     ],
-    # },
+    "assets": {
+        "web.assets_backend": [
+            "codetrade_hospital/static/src/xml/account_payment_inherit.xml",
+            "codetrade_hospital/static/src/css/hospital_dashboard.css",
+        ],
+    },
     "installable": True,
     "application": True,
 }

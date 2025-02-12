@@ -10,24 +10,15 @@ class HospitalPatient(models.Model):
     _description = "Hospital Patient"
 
     patient_name = fields.Char(string="Patient Name", required=True)
-
     age = fields.Integer(string="Age", compute="_compute_age", store=True)
-
-    gender = fields.Selection(
-        [("male", "Male"), ("female", "Female"), ("other", "Other")],
-        string="Gender",
-        required=True,
-    )
-
+    gender = fields.Selection([("male", "Male"), ("female", "Female"), ("other", "Other")], string="Gender", required=True)
     contact_number = fields.Char(string="Contact Number", required=True)
-
     email = fields.Char(string="Email", required=True)
-
     date_of_birth = fields.Date(string="Date of Birth", required=True)
-
+    company_id = fields.Many2one("res.company", string="Company", default=lambda self: self.env.company, required=True)
     physician_id = fields.Many2one("hospital.physician", string="Assigned Physician")
-
     user_id = fields.Many2one("res.users", string="Related User", ondelete="cascade")
+    image = fields.Binary(string="Patient Image")
 
     @api.constrains("email")
     def _check_email_format(self):
@@ -56,7 +47,6 @@ class HospitalPatient(models.Model):
 
     @api.model
     def create(self, vals):
-        # import pdb;pdb.set_trace()
         vals["name"] = vals.get("patient_name")
         vals["login"] = vals.get("email")
         return super(HospitalPatient, self).create(vals)

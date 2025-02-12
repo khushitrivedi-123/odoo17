@@ -1,0 +1,63 @@
+<odoo>
+    <record id="view_hospital_dashboard_kanban" model="ir.ui.view">
+        <field name="name">hospital.dashboard.kanban</field>
+        <field name="model">hospital.dashboard</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_dashboard">
+                <field name="patient_count"/>
+                <field name="physician_count"/>
+                <field name="treatment_count"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="d-flex justify-content-center align-items-center w-100 h-100">
+                            <div class="tile-container" style="margin: auto;">
+                                <a type="object" name="action_open_patients" class="text-decoration-none">
+                                    <div class="card patient_tile text-center shadow-sm p-3" style="width: 300px; height: 160px;">
+                                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                            <h6 class="card-title text-primary mb-2" style="font-size: 1.3rem;">Patients</h6>
+                                            <h3 class="fw-bold text-dark" style="font-size: 2rem;">
+                                                <field name="patient_count" />
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a type="object" name="action_open_physicians" class="text-decoration-none">
+                                    <div class="card physician_tile text-center shadow-sm p-3" style="width: 300px; height: 160px;">
+                                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                            <h6 class="card-title text-success mb-2" style="font-size: 1.3rem;">Physicians</h6>
+                                            <h3 class="fw-bold text-dark" style="font-size: 2rem;">
+                                                <field name="physician_count" />
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a type="object" name="action_open_treatments" class="text-decoration-none">
+                                    <div class="card treatment_tile text-center shadow-sm p-3" style="width: 300px; height: 160px;">
+                                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                            <h6 class="card-title text-danger mb-2" style="font-size: 1.3rem;">Treatments</h6>
+                                            <h3 class="fw-bold text-dark" style="font-size: 2rem;">
+                                                <field name="treatment_count" />
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_hospital_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">hospital.dashboard</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_hospital_dashboard_kanban"/>
+        <field name="help" type="html">
+            <p>Hospital Dashboard provides an overview of Patients, Physicians, and Treatments.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hospital_dashboard_action" name="Dashboard" parent="codetrade_hospital.hospital_menu_root" action="action_hospital_dashboard"/>
+</odoo>

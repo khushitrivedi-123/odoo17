@@ -7,8 +7,13 @@
         "views/form_template.xml",
         "views/thank_you_template.xml",
         "views/menu_patient_registration.xml",
+        "views/snippet/snippets.xml",
     ],
     "installable": True,
     "application": False,
-    "models": ["models/hospital_patient.py"],
+    'assets': {
+        'web.assets_frontend': [
+            'hospital_website/static/src/css/custom_snippet.css',
+        ],
+    },
 }

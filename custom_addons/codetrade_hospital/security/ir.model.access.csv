@@ -9,3 +9,4 @@ access_hospital_sales_order_user,sales.order user,model_sale_order,base.group_us
 access_invoice_report_wizard_user,invoice.report.wizard user,model_invoice_report_wizard,base.group_user,1,1,1,1
 access_hospital_treatment_nurse,hospital.treatment nurse,model_hospital_treatment,codetrade_hospital.group_hospital_nurse,1,1,0,0
 access_hospital_treatment_doctor,hospital.treatment doctor,model_hospital_treatment,codetrade_hospital.group_hospital_doctor,1,1,1,1
+access_hospital_dashboard_user,hospital.dashboard user,model_hospital_dashboard,base.group_user,1,1,1,1

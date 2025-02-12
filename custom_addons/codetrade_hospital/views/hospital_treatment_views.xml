@@ -26,6 +26,7 @@
                         <field name="patient_id"/>
                         <field name="physician_id"/>
                         <field name="treatment_date"/>
+                        <field name="company_id"/>
                         <field name="diagnosis_line_id"/>
                     </group>
                 </sheet>
@@ -41,10 +42,27 @@
                 <field name="patient_id"/>
                 <field name="physician_id"/>
                 <field name="treatment_date"/>
+                <field name="company_id"/>
                 <field name="diagnosis_line_id"/>
             </tree>
         </field>
     </record>
+
+    <record id="view_hospital_treatment_search" model="ir.ui.view">
+        <field name="name">hospital.treatment.search</field>
+        <field name="model">hospital.treatment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="physician_id"/>
+                <field name="treatment_date"/>
+                <filter name="has_high_diagnosis_past"
+                        string="High Diagnosis "
+                        domain="[('has_high_diagnosis_past', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
      <record id="action_hospital_treatment" model="ir.actions.act_window">
         <field name="name">Treatments</field>
         <field name="res_model">hospital.treatment</field>
